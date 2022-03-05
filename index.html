@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="form.js" defer></script>
+    <title>Form validation</title>
 </head>
 <body>
+    <form action="submit">
+        <fieldset>
+            <legend>SLAVA UKRAINI, SMERT' VOROGAM</legend>
+        <div>
+            <label for="email">Please enter your email</label>
+            <input type="email" id="email" required>
+        </div>
+        <p id="emailErr"></p>
+        <div>
+            <label for="country">Please enter your country</label>
+            <input type="text" id="country" list="countries" required pattern="[A-Za-z]+">
+            <datalist id="countries">
+                <option value="Ukraine">
+                <option value="UnitedStates">
+                <option value="GreatBritain">
+                <option value="Canada">
+                <option value="Poland">
+            </datalist>
+        </div>
+        <p id="countErr"></p>
+        <div>
+            <label for="zip">Please enter your zipcode</label>
+            <input type="number" id="zip" required min="1" max="999999999">
+        </div>
+        <p id="zipErr"></p>
+        </fieldset>
+
+        <fieldset>
+            <legend>PASSWORD CONFIRMATION</legend>
+            <div>
+                <label for="pass">Password</label>
+                <input type="password" id="pass" required>
+            </div>
+            <div>
+                <label for="pass_conf">Confirm your password</label>
+                <input type="password" id="pass_conf" required>
+            </div>
+            <p id="passErr"></p>
+        </fieldset>
+        <div class="btn">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
     
 </body>
 </html>
